@@ -1,4 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+:root{
+ --background-color: #4c4b48;
+ --background-color-secondairy: #797876;
+    --tertairy-color: #1f1e1a;
+  --gradient-main: linear-gradient(to right, var(--background-color), var(--background-color-secondairy));
+  --gradient-secondary: linear-gradient(to right, var(--background-color), var(--tertairy-color));
+
+    /*font*/
+    /*colors*/
+    --font-color-light: #ffff;
+    /*size*/
+    --font-size-h1: 2em;
+    --font-size-h2: 1.5em;
+    --font-size-text: 1.2em;
+    /*family*/
+    --font-family-normal: 'Rubik', sans-serif;
+    --font-family-bold: 'Rubik', sans-serif, bold;
+}
+
+h1, h2, a{
+    font-family: var(--font-family-normal);
+
+}
+
+h1, h2, p, a{
+    font-family: var(--font-family-normal);
+    color: var(--font-color-light);
+}
+
+
+
+h1 {
+    font-size: var(--font-size-h1);
+    --font-family-bold: 'Rubik', sans-serif, bold;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    --font-family-bold: 'Rubik', sans-serif, bold;
+}
+
+
+p, a {
+    font-size: var(--font-size-text);
+}
+
+p {
+    font-family: var(--font-family-normal);
+}
+
+a {
+    text-decoration: none;
+    margin: 1em 0 1em 0;
+}
 
 * {
   box-sizing: border-box;
@@ -6,47 +61,80 @@
   padding: 0;
 }
 
+
 body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  background: silver;
+  display: flex;
+  justify-content: center;
 }
 
-header {
-  padding: 0.5rem;
-  background: red;
-  color: white;
 
-  h1 {
-    text-transform: uppercase;
-  }
-}
 
 article {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  width: 12rem;
-  aspect-ratio: 1/1;
+  margin-top: 10em;
+  background: var(--gradient-main);
   border-radius: 0.5rem;
-  overflow: hidden;
-  background: white;
-  text-align: center;
-  transform-origin: center;
-  transform: rotate(2deg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  > p {
-    font-size: 2rem;
-    font-family: 'Permanent Marker', cursive;
-    transform-origin: center;
-    transform: rotate(-6deg);
-    word-break: break-all;
-  }
+    max-width: 60%;
 }
 
-footer {
-  height: 1rem;
-  background: red;
+.content-container {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+                "profile-container repo-container";
+    margin: 6em;
 }
+
+.profile-container {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(4, auto);
+
+        grid-template-areas:
+    "avatar avatar avatar"
+    "name name name"
+    "links-github links-linkedin links-insta"
+    "bio bio bio";
+    }
+
+
+
+.avatar {
+    grid-area: avatar;
+}
+
+.name{
+    grid-area: name;
+}
+
+.links-github{
+    grid-area: links-github;
+}
+
+.links-linkedin{
+    grid-area: links-linkedin;
+}
+
+.links-insta {
+
+    grid-area: links-insta;
+}
+
+.bio{
+    grid-area: bio;
+}
+
+.profile-container img {
+
+
+}
+
+
+
+
+
+.repo-container {
+
+}
+

@@ -1,13 +1,32 @@
 <%- include('./partials/head') %>
 
 <article>
-  <header>
-    <img src="" alt="">
-  </header>
+    <header>
+        <img src="" alt="">
+    </header>
 
-  <p><%= data.name %></p>
+    <div class="content-container">
 
-  <footer></footer>
+        <div class="profile-container">
+            <img class="avatar" src="<%= data.avatar %>" alt="Profiel foto">
+            <h1 class="name"><%= data.name %></h1>
+            <a class="links" href="<%= data.website %>" target="_blank">🖥️Github</a>
+            <a class="links" href="<%= data.website %>" target="_blank">💼Linkedin</a>
+            <a class="links" href="<%= data.website %>" target="_blank">📸Instagram</a>
+            <p class="bio"><%= data.bio %></p>
+        </div>
+
+
+        <div class="repo-container">
+            <div class="repo-widget">
+                <button id="repo-button"></button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer></footer>
 </article>
 
 <%- include('./partials/foot') %>
