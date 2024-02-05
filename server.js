@@ -5,7 +5,7 @@ import express from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
 // Haal data op uit de FDND API, ga pas verder als de data gedownload is
-const data = await fetchJson('https://fdnd.directus.app/items/person/65')
+const data = await fetchJson('https://fdnd.directus.app/items/person/13')
 // console.log(data); // uncomment om de opgehaalde data te checken
 
 // Maak een nieuwe express app aan
@@ -32,7 +32,7 @@ app.post('/', function (request, response) {
 })
 
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8000)
+app.set('port', process.env.PORT || 8800)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
