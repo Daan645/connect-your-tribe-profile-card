@@ -86,7 +86,12 @@ border-radius: 0.5em;
     width: 20%;
     height: 10%;
     margin: 0;
-    scale: 1.20;
+    cursor: pointer;
+    transition: transform 0.15s ease-in;
+}
+
+button:hover{
+    transform: scale(1.20);
 
 }
 
@@ -185,6 +190,10 @@ display: none;
     margin: 1em;
 }
 
+.repo button:active {
+
+}
+
 /* Animaties */
 @keyframes repo-grow {
     0% {
@@ -204,7 +213,8 @@ display: none;
 
 .repo-grow {
 display: block;
-    animation: repo-grow 1.2s forwards ease; /* Aangepast naar 'repo-grow' */
+    /*1.2 sec*/
+    animation: repo-grow 0.9s forwards ease;
 }
 
 @keyframes repo-button-move {
@@ -215,7 +225,7 @@ display: block;
     }
     25%{
         transform: translateY(0%);
-        scale: 1.50;
+        scale: 1.40;
     }
     60%{
         transform: translateY(0%);
@@ -297,6 +307,102 @@ scale: 1;
 .repo-emoji-appear {
 
     animation: repo-emoji-appear 1s ease; /* Aangepast naar 'repo-grow' */
+}
+
+/*reversed aimations*/
+@keyframes repo-grow-reverse {
+    0% {
+        opacity: 0;
+        transform: translateY(0%);
+        height: 10%;
+    }
+    30%{
+        ransform: translateY(0%);
+        height: 10%;
+    }
+
+    100% {
+        transform: translateY(-65%);
+        height: 53%;
+    }
+}
+
+.repo-grow-reverse {
+    display: block;
+    animation: repo-grow-reverse 0.8s forwards reverse; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-emoji-appear-reverse {
+    0%{
+        opacity: 1;
+
+    }
+
+
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+
+    }
+}
+
+.repo-emoji-appear-reverse {
+
+    animation: repo-emoji-appear-reverse 1s ease; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-button-move-reverse {
+    0% {
+        transform: translateY(0%);
+        scale: 1.20;
+
+    }
+    25%{
+        transform: translateY(0%);
+        scale: 1.50;
+    }
+    60%{
+        transform: translateY(0%);
+        scale: 1.20;
+    }
+    75%{
+        transform: translateY(0%);
+        scale: 1;
+    }
+
+    90%{
+        scale: 1.20;
+    }
+
+    100% {
+        scale: 1;
+        transform: translateY(-450%);
+    }
+}
+
+
+.repo-button-move-reverse {
+    animation: repo-button-move-reverse 3s forwards reverse; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-ul-move-reverse {
+    0%{
+        opacity: 0;
+        transform:translateX(-20%) ;
+    }
+
+    100%{
+        opacity: 1;
+        transform:translateX(0) ;
+    }
+}
+
+.repo-ul-move-reverse {
+    display: block;
+    animation: repo-ul-move-reverse 1s forwards reverse; /* Aangepast naar 'repo-grow' */
 }
 
 

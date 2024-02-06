@@ -2,35 +2,50 @@ let repoButton = document.getElementById('repo-button');
 let repoList = document.querySelector('.repo');
 let repoUl = document.querySelector('.repo-ul');
 let repoEmoji = document.querySelector('.repo-emoji');
+let repoCheck = false;
 
 repoButton.addEventListener('click', function() {
-    // Voeg de klasse met een vertraging van 1 seconde toe
-    setTimeout(function() {
-        repoList.classList.add('repo-grow');
-    }, 2200);
+    if (repoCheck === false) {
 
-    setTimeout(function() {
-        repoEmoji.classList.add('repo-emoji-appear');
-    }, 2000);
+        repoCheck = true;
+        repoButton.classList.toggle('repo-button-move');
+        setTimeout(function() {
+            repoList.classList.toggle('repo-grow');
+        }, 2200);
+        setTimeout(function() {
+            repoEmoji.classList.toggle('repo-emoji-appear');
+        }, 2000);
+        setTimeout(function() {
+            repoEmoji.innerHTML = '❌';
+        }, 2500);
+        setTimeout(function() {
+            repoUl.classList.toggle('repo-ul-move');
+        }, 2850);
+        console.log(repoCheck);
 
-    setTimeout(function() {
-        repoEmoji.innerHTML ='❌';
-    }, 2500);
+    } else {
+
+        repoUl.classList.toggle('repo-ul-move-reverse');
+
+
+        setTimeout(function() {
+            repoButton.classList.toggle('repo-button-move-reverse');
+        }, 1000); // Verlaagde vertragingstijd om consistentie te behouden met de eerste animaties
+        setTimeout(function() {
+            repoEmoji.classList.toggle('repo-emoji-appear-reverse');
+        }, 2500);
+        setTimeout(function() {
+            repoList.classList.toggle('repo-grow-reverse');
+
+        }, 1000);
+        setTimeout(function() {
+            repoEmoji.innerHTML = '⌨️';
+        }, 3000);
+        repoCheck = false;
+        console.log(repoCheck);
+    }
 });
 
-repoButton.addEventListener('click', function() {
-    // Voeg de klasse met een vertraging van 1 seconde toe
-    setTimeout(function() {
-        repoUl.classList.add('repo-ul-move');
-    }, 3300);
-});
-
-repoButton.addEventListener('click', repoButtonAnimation);
 
 
-// Voeg de repoButtonAnimation-functie toe aan een event listener (bijvoorbeeld een click event)
-;
 
-function repoButtonAnimation() {
-    repoButton.classList.toggle('repo-button-move'); // De naam van de klasse moet overeenkomen met de CSS-animatiedefinitie
-}
