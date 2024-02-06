@@ -1,5 +1,7 @@
+/*font import*/
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 
+/*root settings*/
 :root{
  --background-color: #4c4b48;
  --background-color-secondairy: #797876;
@@ -19,12 +21,32 @@
     --font-family-bold: 'Rubik', sans-serif, bold;
 }
 
+/*frame style*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    margin-top: 10em;
+    background: var(--gradient-main);
+    border-radius: 0.5rem;
+    width: 70%;
+}
+
+/*element styles*/
 h1, h2, a{
     font-family: var(--font-family-normal);
 
 }
 
-h1, h2, p, a{
+h1, h2, p, a, button, li{
     font-family: var(--font-family-normal);
     color: var(--font-color-light);
 }
@@ -42,11 +64,11 @@ h2 {
 }
 
 
-p, a {
+p, a , button, li{
     font-size: var(--font-size-text);
 }
 
-p {
+p , button, li{
     font-family: var(--font-family-normal);
 }
 
@@ -55,28 +77,35 @@ a {
     margin: 1em 0 1em 0;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+button{
+    position: absolute;
+border-radius: 0.5em;
+    background: var(--gradient-main);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border: none;
+    width: 20%;
+    height: 10%;
+    margin: 0;
+    scale: 1.20;
+
+}
+
+.repo{
+    position: absolute;
+    border-radius: 0.5em;
+    background: var(--gradient-main);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 1em;
+    margin: 0;
+    width: 20%;
+    height: 10%;
 }
 
 
-body {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-article {
-  margin-top: 10em;
-  background: var(--gradient-main);
-  border-radius: 0.5rem;
-    max-width: 60%;
-}
 
 .content-container {
+    position: relative;
     display: grid;
     flex-direction: row;
     grid-template-columns: repeat(2, 1fr);
@@ -87,6 +116,8 @@ article {
 }
 
 .profile-container {
+    width: 100%;
+    height: 100%;
         display: grid;
         grid-template-columns: repeat(3,auto);
         grid-template-rows: repeat(4, auto);
@@ -135,6 +166,141 @@ article {
 
 
 .repo-container {
+width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center; /* Zowel horizontaal als verticaal centreren */
 
 }
+
+.repo li{
+    /*display: none;*/
+
+    margin: 1em;
+}
+
+.repo-ul{
+    /*display: none;*/
+display: none;
+    margin: 1em;
+}
+
+/* Animaties */
+@keyframes repo-grow {
+    0% {
+        transform: translateY(0%);
+        height: 10%;
+    }
+    30%{
+        ransform: translateY(0%);
+        height: 10%;
+    }
+
+    100% {
+        transform: translateY(-65%);
+        height: 53%;
+    }
+}
+
+.repo-grow {
+display: block;
+    animation: repo-grow 1.2s forwards ease; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-button-move {
+    0% {
+        transform: translateY(0%);
+        scale: 1.20;
+
+    }
+    25%{
+        transform: translateY(0%);
+        scale: 1.50;
+    }
+    60%{
+        transform: translateY(0%);
+        scale: 1.20;
+    }
+    75%{
+        transform: translateY(0%);
+        scale: 1;
+    }
+
+    90%{
+        scale: 1.20;
+    }
+
+    100% {
+scale: 1;
+        transform: translateY(-450%);
+    }
+}
+
+
+.repo-button-move {
+    animation: repo-button-move 3s forwards ease; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-button-shrink{
+    0% {
+
+        scale: 1;
+    }
+    25%{
+        scale: 0.5;
+    }
+
+    100% {
+        scale: 1;
+
+    }
+}
+
+.repo-button-shrink {
+    animation: repo-button-shrink 2s forwards ease; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-ul-move {
+    0%{
+        opacity: 0;
+        transform:translateX(-20%) ;
+    }
+
+    100%{
+        opacity: 1;
+        transform:translateX(0) ;
+    }
+}
+
+.repo-ul-move {
+    display: block;
+    animation: repo-ul-move 1s forwards ease; /* Aangepast naar 'repo-grow' */
+}
+
+@keyframes repo-emoji-appear {
+    0%{
+        opacity: 1;
+
+    }
+
+
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+
+    }
+}
+
+.repo-emoji-appear {
+
+    animation: repo-emoji-appear 1s ease; /* Aangepast naar 'repo-grow' */
+}
+
+
+
+
+
 
