@@ -8,12 +8,12 @@
     <div class="content-container">
 
         <div class="profile-container">
-            <img class="avatar" src="<%= data.avatar %>" alt="Profiel foto">
-            <h1 class="name"><%= data.name %></h1>
-            <a class="links" href="<%= data.website %>" target="_blank">🖥️Github</a>
-            <a class="links" href="<%= data.website %>" target="_blank">💼Linkedin</a>
-            <a class="links" href="<%= data.website %>" target="_blank">📸Instagram</a>
-            <p class="bio"><%= data.bio %></p>
+            <img class="avatar" src="<%= persoonlijkeData.data.avatar %>" alt="Profiel foto">
+            <h1 class="name"><%= persoonlijkeData.data.name %></h1>
+            <a class="links" href="<%= persoonlijkeData.data.website %>" target="_blank">🖥️Github</a>
+            <a class="links" href="<%= persoonlijkeData.data.website %>" target="_blank">💼Linkedin</a>
+            <a class="links" href="<%= persoonlijkeData.data.website %>" target="_blank">📸Instagram</a>
+            <p class="bio"><%= persoonlijkeData.data.bio %></p>
         </div>
 
 
@@ -21,14 +21,16 @@
             <div class="repo-widget">
                 <div class="repo">
                     <ul class="repo-ul">
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
+                        <% for (let i = 0; i < 7; i++) { %>
+                            <% if (githubData[i]) { %>
+                                <li>
+                                    <a href="<%= githubData[i].html_url %>">
+                                        <%= githubData[i].name.length > 15 ? githubData[i].name.substring(0, 15) + '...' : githubData[i].name %>
+                                    </a>
+                                </li>
+                            <% } %>
+                        <% } %>
+
                     </ul>
                 </div>
                 <button id="repo-button">
