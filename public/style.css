@@ -36,10 +36,10 @@ body {
 
 article {
     position: absolute;
-    margin: 5%;
+    margin: 3%;
     background: var(--gradient-main);
     border-radius: 0.5rem;
-    width: 90%;
+    width: 70%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -182,7 +182,7 @@ button:hover{
 }
 
 .profile-container img {
-
+width: 100%;
 
 }
 
@@ -241,18 +241,18 @@ display: none;
     0% {
         transform: translateY(0%);
         height: 10%;
-        width: 25%;
+
     }
     30%{
         transform: translateY(0%);
         height: 10%;
-        width: 25%;
+
     }
 
     100% {
         transform: translateY(-65%);
         height: 53%;
-        width: 25%;
+
     }
 }
 
@@ -288,7 +288,6 @@ display: block;
     100% {
 scale: 1;
         transform: translateY(-450%);
-        width: 25%
     }
 }
 
