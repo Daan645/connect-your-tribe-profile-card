@@ -38,7 +38,7 @@ Bekijk<a hrefhttps://frightened-ray-dress.cyclic.app/=>hier</a> mijn website!
 ## Installatie
 Stap 1: Om de inhoud van een GitHub-repository te kopiëren naar je eigen computer, voer je het volgende commando uit in je terminal:
 
-'''git clone https://github.com/driezie/connect-your-tribe-profile-card.git'''
+'''git clone https://github.com/Daan645/connect-your-tribe-profile-card.git'''
 
 Stap 2: Navigeer naar de map waarin de gekloonde repository zich bevindt met behulp van het volgende commando:
 '''cd connect-your-tribe-profile-card'''
