@@ -1,12 +1,13 @@
+<!--includes the head of the index from the partials map, because its the same in every page-->
 <%- include('./partials/head') %>
 
 <article>
     <header>
         <img src="" alt="">
     </header>
-
+    <!--content container wraps the profile and repo divs-->
     <div class="content-container">
-
+        <!--wraps the profile-->
         <div class="profile-container">
             <img class="avatar" src="<%= persoonlijkeData.data.avatar %>" alt="Profiel foto">
             <h1 class="name"><%= persoonlijkeData.data.name %></h1>
@@ -16,15 +17,19 @@
             <p class="bio"><%= persoonlijkeData.data.bio %></p>
         </div>
 
-
+        <!--wraps the repo button-->
         <div class="repo-container">
             <div class="repo-widget">
                 <div class="repo">
                     <ul class="repo-ul">
+                        <!--loopt 7 keer door de array heen-->
                         <% for (let i = 0; i < 7; i++) { %>
+                            <!--als er data in de array is weergeef dan dit-->
                             <% if (githubData[i]) { %>
                                 <li>
+                                    <!--pak de link uit de array die bij de waarde van i hoort-->
                                     <a href="<%= githubData[i].html_url %>">
+                                        <!--kijk naar de lengte van de string als deze langer is dan 15 voeg je ... toe als dit niet zo is dan gewoon de hele naam-->
                                         <%= githubData[i].name.length > 15 ? githubData[i].name.substring(0, 15) + '...' : githubData[i].name %>
                                     </a>
                                 </li>
@@ -46,4 +51,5 @@
     <footer></footer>
 </article>
 
+<!--includes the footer of the index from the partials map, because its the same in every page-->
 <%- include('./partials/foot') %>
