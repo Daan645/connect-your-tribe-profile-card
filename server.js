@@ -7,7 +7,7 @@ import fetchJson from './helpers/fetch-json.js'
 // Haal data op uit de FDND API, ga pas verder als de data gedownload is
 const persoonlijkeData = await fetchJson('https://fdnd.directus.app/items/person/13')
 // console.log(data); // uncomment om de opgehaalde data te checken
-laat
+const githubData = await fetchJson('https://api.github.com/users/daan645/repos')
 
 // Maak een nieuwe express app aan
 const app = express()
